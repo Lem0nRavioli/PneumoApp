@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Détéction de pneumonie</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">      
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Accueil</a>
+    </nav>
+
+    <div class="container">
+      <center>
+      <div id="content" style="margin-top:2em">
+        <h2>Projet de détection de pneumonie</h2>
+        <div>
+          <br>
+          <br>
+          <form id="upload-file" method="post" enctype="multipart/form-data">
+              <label for="imageUpload" class="upload-label">
+                  Selectionner une image
+              </label>
+              <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+          </form>
+
+          <div class="image-section" style="display:none;">
+            <div class="img-preview">
+              <div id="imagePreview">
+              </div>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Faire une prédiction</button>
+            </div>
+        </div>
+       
+        <div class="loader" style="display:none;"></div>
+        <h3 id="result">
+            <span> </span>
+        </h3>
+       
+    </div>
+    
+  </center>
+  </div>
+</div>
+</body>
+  <footer class="bg-dark text-center text-white fixed-bottom">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script> 
+    </footer>
+</html>
